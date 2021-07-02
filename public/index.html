@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Strona Główna - Universal Account</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.brown-indigo.min.css" />
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  </head>
+  <body>
+
+    <dialog id="signinDialog" class="mdl-dialog" style="width:30%;min-height:300px">
+      <center><h4 class="mdl-dialog__title">Sign In</h4></center>
+      <div class="mdl-dialog__content">
+        <div id="firebaseui-auth-container"></div>
+        <div id="loader">Loading...</div>
+      </div>
+    </dialog>
+
+    <div class="login-cover">
+      <div class="page-loader mdl-spinner mdl-js-spinner is-active"></div>
+    </div>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title"><span id="heading"></span>
+            <span class="page-title-span"> | </span>
+            <span class="page-title-span" id="username"></span>
+          </span>
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" id="signOutBtn">Sign Out <i class="material-icons">account_circle</i></button>
+          </nav>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--3-offset">
+              <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width:100%">
+                <thead>
+                  <tr>
+                    <th><h5>Name:</h5></th>
+                    <th><h5>Value:</h5></th>
+                    <th style='text-align:center'><h5>Action</h5></th>
+                  </tr>
+                </thead>
+                <tbody id="userData">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDpIHXm4z4hgdkoGxjeBqYiHk1ujQmA7KI",
+        authDomain: "universal-account-d1f57.firebaseapp.com",
+        databaseURL: "https://universal-account-d1f57.firebaseio.com",
+        projectId: "universal-account-d1f57",
+        storageBucket: "universal-account-d1f57.appspot.com",
+        messagingSenderId: "573287524891",
+        appId: "1:573287524891:web:02241b9dfe4fd6753d26be",
+        measurementId: "G-9NMSW5QZVY"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="/javascript/heading.js" charset="utf-8"></script>
+    <script src="/javascript/signin.js" charset="utf-8"></script>
+    <script src="/javascript/index.js" charset="utf-8"></script>
+  </body>
+</html>
